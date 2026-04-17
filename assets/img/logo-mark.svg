@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="markTitle markDesc">
+  <title id="markTitle">Takumi seal</title>
+  <desc id="markDesc">Red hanko-style seal with the Japanese character for artisan (takumi, 匠).</desc>
+
+  <rect x="0" y="0" width="160" height="160" rx="8" ry="8" fill="#C8102E"/>
+  <rect x="10" y="10" width="140" height="140" rx="4" ry="4" fill="none" stroke="#ffffff" stroke-width="2.6"/>
+  <rect x="17" y="17" width="126" height="126" rx="2" ry="2" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.65"/>
+
+  <g fill="#ffffff" transform="translate(32 30)">
+    <path d="M 4 6 L 88 6 L 88 17 L 15 17 L 15 82 L 48 82 L 48 93 L 4 93 Z"/>
+    <path d="M 30 24 L 43 24 L 38 35 L 25 35 Z"/>
+    <rect x="25" y="39" width="60" height="9"/>
+    <rect x="47" y="39" width="9" height="37"/>
+    <rect x="30" y="56" width="37" height="7"/>
+    <path d="M 72 39 L 90 71 L 81 75 L 64 43 Z"/>
+  </g>
+</svg>

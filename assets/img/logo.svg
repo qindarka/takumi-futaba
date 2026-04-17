@@ -1,25 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 160" role="img" aria-labelledby="logoTitle logoDesc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 160" role="img" aria-labelledby="logoTitle logoDesc" preserveAspectRatio="xMinYMid meet">
   <title id="logoTitle">Takumi Stamping Canada</title>
-  <desc id="logoDesc">Takumi Stamping Canada wordmark logo with a red stamped seal mark containing the artisan kanji.</desc>
+  <desc id="logoDesc">Takumi Stamping Canada logo — a red hanko seal with the Japanese character for artisan (takumi, 匠) beside the wordmark TAKUMI with the line STAMPING CANADA beneath.</desc>
 
   <defs>
     <style>
-      .wordmark { font-family: 'Helvetica Neue', 'Arial', 'Liberation Sans', sans-serif; font-weight: 700; letter-spacing: 2px; }
-      .subline  { font-family: 'Helvetica Neue', 'Arial', 'Liberation Sans', sans-serif; font-weight: 500; letter-spacing: 6px; }
-      .seal     { font-family: 'Noto Serif CJK JP', 'Yu Mincho', 'MS Mincho', 'serif'; font-weight: 700; }
+      .tk-wordmark { font-family: "Helvetica Neue", "Arial Black", "Liberation Sans", Arial, sans-serif; font-weight: 800; letter-spacing: 0.04em; }
+      .tk-subline  { font-family: "Helvetica Neue", "Arial", "Liberation Sans", sans-serif; font-weight: 600; letter-spacing: 0.38em; }
+      .tk-seal     { font-family: "Noto Serif CJK JP", "Yu Mincho", "MS Mincho", "Hiragino Mincho ProN", "Songti SC", serif; font-weight: 900; }
     </style>
   </defs>
 
-  <!-- Red seal / stamp mark -->
-  <g transform="translate(20 20)">
-    <rect x="0" y="0" width="120" height="120" rx="8" ry="8" fill="#C8102E"/>
-    <rect x="6" y="6" width="108" height="108" rx="4" ry="4" fill="none" stroke="#ffffff" stroke-width="2"/>
-    <text x="60" y="88" class="seal" font-size="80" fill="#ffffff" text-anchor="middle">匠</text>
+  <!-- Hanko seal: red square with double inner border and the kanji 匠.
+       Rendered at 140×140 with a path-based kanji for crisp, font-independent display. -->
+  <g transform="translate(10 10)">
+    <!-- Outer red square -->
+    <rect x="0" y="0" width="140" height="140" rx="6" ry="6" fill="#C8102E"/>
+    <!-- Outer white frame -->
+    <rect x="8" y="8" width="124" height="124" rx="3" ry="3" fill="none" stroke="#ffffff" stroke-width="2.2"/>
+    <!-- Inner hairline frame (traditional hanko style) -->
+    <rect x="14" y="14" width="112" height="112" rx="2" ry="2" fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.65"/>
+
+    <!-- Kanji 匠 built from paths (no font dependency). The character has two parts:
+         (1) the outer 匚 frame that opens to the right, (2) the 斤 radical inside. -->
+    <g fill="#ffffff" transform="translate(24 24)">
+      <!-- 匚 outer frame (opens right): top bar, left column, short bottom stub -->
+      <path d="M 4 6
+               L 82 6
+               L 82 16
+               L 14 16
+               L 14 76
+               L 44 76
+               L 44 86
+               L 4 86
+               Z"/>
+      <!-- 斤 inside radical -->
+      <!-- Top-left tick (short stroke angling down) -->
+      <path d="M 28 22
+               L 40 22
+               L 36 32
+               L 24 32
+               Z"/>
+      <!-- Horizontal crossbar across the middle -->
+      <rect x="24" y="36" width="56" height="8"/>
+      <!-- Central vertical stroke -->
+      <rect x="44" y="36" width="8"  height="34"/>
+      <!-- Lower horizontal -->
+      <rect x="28" y="52" width="34" height="6"/>
+      <!-- Right diagonal stroke (top-right down to bottom-right area) -->
+      <path d="M 68 36
+               L 84 66
+               L 76 70
+               L 60 40
+               Z"/>
+    </g>
   </g>
 
-  <!-- Wordmark -->
-  <text x="160" y="82" class="wordmark" font-size="54" fill="#1a1a1a">TAKUMI</text>
-  <line x1="160" y1="98" x2="478" y2="98" stroke="#C8102E" stroke-width="2"/>
-  <text x="160" y="124" class="subline" font-size="16" fill="#1a1a1a">STAMPING CANADA</text>
+  <!-- Wordmark: TAKUMI -->
+  <g transform="translate(180 0)">
+    <text x="0" y="80" class="tk-wordmark" font-size="60" fill="#1a1a1a">TAKUMI</text>
+
+    <!-- Red accent rule under the wordmark -->
+    <rect x="0" y="92" width="320" height="3" fill="#C8102E"/>
+
+    <!-- Subline: STAMPING CANADA -->
+    <text x="0" y="124" class="tk-subline" font-size="15" fill="#1a1a1a">STAMPING CANADA</text>
+  </g>
 </svg>

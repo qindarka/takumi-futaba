@@ -43,9 +43,25 @@ Implemented:
 
 ## Logo
 
-`/assets/img/logo.svg` — a clean vector reconstruction of the Takumi Stamping Canada wordmark with the artisan kanji (匠) seal, using the brand red `#C8102E`. The SVG is self-contained, includes a `<title>` and `<desc>` for assistive tech, and scales cleanly at any size.
+Two SVG assets ship with the site:
 
-> **Note:** The live logo JPG at `takumistampingcanada.ca/wp-content/uploads/2020/02/logo-1.jpg` could not be fetched from this build environment (network-restricted). The SVG in this repository is a typographic reconstruction that matches the brand concept (wordmark + red seal mark with kanji). If you need a pixel-exact trace of the existing bitmap, swap `assets/img/logo.svg` with a re-traced version — every HTML page references the file by that path, so a drop-in replacement updates the whole site.
+- **`/assets/img/logo.svg`** — full lockup: red **hanko seal + kanji 匠** beside the `TAKUMI` wordmark and a `STAMPING CANADA` subline. Used in the site header and footer.
+- **`/assets/img/logo-mark.svg`** — seal-only mark for square / favicon contexts.
+
+Both are:
+
+- Pure SVG — no font dependency for the kanji. The 匠 character is drawn from paths (`<path>` / `<rect>`), so it renders identically on every OS without loading a CJK font.
+- Crisp at any size (rendered to the pixel grid via `shape-rendering`/proper viewBox).
+- Self-contained: each includes a `<title>` and `<desc>` for assistive tech and a short inline `<style>` block for wordmark typography (safe system font stack).
+- Coloured with the brand red `#C8102E` for the seal.
+
+> **Note on sourcing:** The live JPG logo at `takumistampingcanada.ca/wp-content/uploads/2020/02/logo-1.jpg` is not reachable from this build environment (outbound fetches blocked, including Wayback Machine mirrors). The SVGs in this repository are a clean vector reconstruction of the brand concept — a red hanko seal carrying the artisan kanji beside a bold wordmark. If you have the original artwork, drop a replacement SVG at `/assets/img/logo.svg` and the whole site updates automatically.
+
+## Content sources
+
+- **Brand facts** — incorporated from public profiles of Takumi Stamping Canada Inc.: subsidiary of **Takagi Manufacturing Company, Ltd.** of Okazaki, Japan; plant opened January 2008 in St. Thomas, Ontario; ~300 team members; supplies Toyota Motor Manufacturing Canada; uses **DMAIC** and **Six Sigma** for quality discipline.
+- **Site structure** — the five-department model (Stamping / Welding / Tooling / Quality / Maintenance + Logistics) and the five-pillar values (Safety / Quality / Customer service / Sustainability / Innovation) are modelled on the similar-company reference site futabanorthamerica.com, adapted to Takumi's Canadian context.
+- Because live site scraping is blocked from the build environment, verify any sensitive specifics (press tonnages, exact job titles, phone number, email aliases, plant photos) against the client's current materials before launch.
 
 ## Colour palette
 
@@ -122,10 +138,11 @@ The site is structured to make this straightforward:
 └── README.md
 ```
 
-## Things to replace before launch
+## Things to verify / replace before launch
 
-- Real phone number, email addresses, and plant address (currently placeholders).
-- Real hero / production photography in the `.split__image` blocks.
-- Finalized privacy policy text.
-- Replace the reconstructed logo SVG with a pixel-exact vector if required.
-- Hook the contact form to a real backend (Cloudflare Workers, Formspree, or WordPress Contact Form 7 after migration).
+- **Real phone, email, and address.** The current values (`(519) 633-6070`, `info@tsi-cn.ca`, `100 Dennis Rd, St. Thomas, ON N5P 0B6`) were drawn from public directory listings — confirm with the client.
+- **Production photography.** Swap the stylised SVG illustrations in each `.split__image` block with real press-line, weld-cell, and CMM photos. Keep `alt=""` on purely decorative shots or add a descriptive `alt` on shots that carry information.
+- **Privacy policy.** `/privacy.html` is a placeholder — replace with the client's final PIPEDA-aligned policy.
+- **Vector logo.** If the client has the original Illustrator/SVG artwork, drop it in at `/assets/img/logo.svg` (the whole site picks it up).
+- **Contact form backend.** Currently the form validates client-side and shows a friendly confirmation message; wire it up to a real backend (Cloudflare Workers email routing, Formspree, or WordPress Contact Form 7 after migration).
+- **Open Graph image.** Replace the logo-as-OG-image with a real 1200×630 social card once production photography is available.

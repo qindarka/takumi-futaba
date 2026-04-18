@@ -254,7 +254,7 @@ p  { margin: 0 0 var(--space-4); max-width: 72ch; text-wrap: pretty; }
     repeating-linear-gradient(45deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 22px);
   pointer-events: none;
 }
-/* Faint red seal watermark in the corner */
+/* Faint red brand glow in the corner */
 .hero::after {
   content: "";
   position: absolute; right: -80px; bottom: -80px; z-index: -1;

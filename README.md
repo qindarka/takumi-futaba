@@ -43,19 +43,18 @@ Implemented:
 
 ## Logo
 
-Two SVG assets ship with the site:
+Two SVG assets ship with the site, traced from the client's original logo:
 
-- **`/assets/img/logo.svg`** — full lockup: red **hanko seal + kanji 匠** beside the `TAKUMI` wordmark and a `STAMPING CANADA` subline. Used in the site header and footer.
-- **`/assets/img/logo-mark.svg`** — seal-only mark for square / favicon contexts.
+- **`/assets/img/logo.svg`** — full lockup: four red brand diamonds beside the `TAKUMI` wordmark with `STAMPING CANADA INC` set underneath. Used in the site header and footer.
+- **`/assets/img/logo-mark.svg`** — mark-only (four diamonds) for square / favicon / tight-space contexts.
 
 Both are:
 
-- Pure SVG — no font dependency for the kanji. The 匠 character is drawn from paths (`<path>` / `<rect>`), so it renders identically on every OS without loading a CJK font.
-- Crisp at any size (rendered to the pixel grid via `shape-rendering`/proper viewBox).
-- Self-contained: each includes a `<title>` and `<desc>` for assistive tech and a short inline `<style>` block for wordmark typography (safe system font stack).
-- Coloured with the brand red `#C8102E` for the seal.
+- Pure vector SVG — the diamonds are `<polygon>` primitives, so they render pin-sharp at every size and every DPI without rasterisation artefacts.
+- Self-contained — each includes a `<title>` and `<desc>` for assistive tech, and an inline `<style>` block for the wordmark typography (safe system-font stack, no external font loading).
+- Coloured with the brand red `#C8102E` for the diamonds and solid black `#000000` for the wordmark — the same palette as the client's original artwork.
 
-> **Note on sourcing:** The live JPG logo at `takumistampingcanada.ca/wp-content/uploads/2020/02/logo-1.jpg` is not reachable from this build environment (outbound fetches blocked, including Wayback Machine mirrors). The SVGs in this repository are a clean vector reconstruction of the brand concept — a red hanko seal carrying the artisan kanji beside a bold wordmark. If you have the original artwork, drop a replacement SVG at `/assets/img/logo.svg` and the whole site updates automatically.
+> **Source:** vectorised from the reference raster provided by the client. If the original vector artwork (AI / EPS / PDF) is available, drop a replacement at `/assets/img/logo.svg` and the whole site picks it up automatically — every page references the file by that single path.
 
 ## Content sources
 
@@ -65,9 +64,9 @@ Both are:
 
 ## Colour palette
 
-- Primary red: `#C8102E` (`--color-primary`)
+- Primary red (diamond marks): `#C8102E` (`--color-primary`)
 - Primary red (hover / text on white, AA-compliant): `#9E0C24` (`--color-primary-dark`)
-- Ink / headlines: `#1a1a1a`
+- Wordmark / headlines: `#000000` (logo) · `#1a1a1a` (page headings)
 - Body text: `#212121`
 - Secondary text: `#4a4a4a`
 - Surface: `#ffffff` / alt `#f5f5f5` / dark `#0f0f0f`

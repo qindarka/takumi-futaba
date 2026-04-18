@@ -45,14 +45,14 @@ Implemented:
 
 Two SVG assets ship with the site, traced from the client's original logo:
 
-- **`/assets/img/logo.svg`** — full lockup: four red brand diamonds beside the `TAKUMI` wordmark with `STAMPING CANADA INC` set underneath. Used in the site header and footer.
-- **`/assets/img/logo-mark.svg`** — mark-only (four diamonds) for square / favicon / tight-space contexts.
+- **`/assets/img/logo.svg`** — full lockup: a seven-diamond brand-blue cluster (`#007BFF`) beside the `TAKUMI` wordmark with `STAMPING CANADA INC` set underneath. Used in the site header and footer.
+- **`/assets/img/logo-mark.svg`** — mark-only (the seven-diamond cluster) for square / favicon / tight-space contexts.
 
 Both are:
 
 - Pure vector SVG — the diamonds are `<polygon>` primitives, so they render pin-sharp at every size and every DPI without rasterisation artefacts.
 - Self-contained — each includes a `<title>` and `<desc>` for assistive tech, and an inline `<style>` block for the wordmark typography (safe system-font stack, no external font loading).
-- Coloured with the brand red `#C8102E` for the diamonds and solid black `#000000` for the wordmark — the same palette as the client's original artwork.
+- Coloured with the brand blue `#007BFF` for the diamonds and solid black `#000000` for the wordmark — matching the hex palette from the client's cleaned-up reference artwork.
 
 > **Source:** vectorised from the reference raster provided by the client. If the original vector artwork (AI / EPS / PDF) is available, drop a replacement at `/assets/img/logo.svg` and the whole site picks it up automatically — every page references the file by that single path.
 
@@ -64,12 +64,17 @@ Both are:
 
 ## Colour palette
 
-- Primary red (diamond marks): `#C8102E` (`--color-primary`)
-- Primary red (hover / text on white, AA-compliant): `#9E0C24` (`--color-primary-dark`)
-- Wordmark / headlines: `#000000` (logo) · `#1a1a1a` (page headings)
-- Body text: `#212121`
-- Secondary text: `#4a4a4a`
-- Surface: `#ffffff` / alt `#f5f5f5` / dark `#0f0f0f`
+Derived from the cleaned-up logo the client supplied — brand blue + pure black on white, with supporting neutrals.
+
+- **Primary blue** (logo diamonds, hero glow, CTA band, large accents): `#007BFF` · `--color-primary`
+- **Primary blue (dark)** (links, button fills, hovers, eyebrows — AA-contrast on white): `#0056B3` · `--color-primary-dark`
+- **Wordmark / logo text:** `#000000`
+- **Page headings / ink:** `#1a1a1a` (17:1 on white)
+- **Body text:** `#212121` (16:1 on white)
+- **Secondary text:** `#4a4a4a` (8.9:1 on white)
+- **Surfaces:** `#ffffff` (default) · `#f5f5f5` (alt) · `#0f0f0f` (dark sections)
+- **Focus ring:** `#0b5cff` (distinct from brand blue, 5.3:1 on white)
+- **Hero / page-header deep tones:** `#0a1528` / `#0a1b33` (navy-tinted near-black that complements the brand blue glow)
 
 ## Deploying to Cloudflare Pages
 

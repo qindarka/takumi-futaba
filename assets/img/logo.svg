@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 120" role="img" aria-labelledby="logoTitle logoDesc" preserveAspectRatio="xMinYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" role="img" aria-labelledby="logoTitle logoDesc" preserveAspectRatio="xMinYMid meet">
   <title id="logoTitle">Takumi Stamping Canada Inc</title>
-  <desc id="logoDesc">Takumi Stamping Canada Inc logo: four red diamonds to the left of the TAKUMI wordmark, with STAMPING CANADA INC set beneath.</desc>
+  <desc id="logoDesc">Takumi Stamping Canada Inc logo: a cluster of seven bright-blue diamonds to the left of the TAKUMI wordmark, with STAMPING CANADA INC set beneath.</desc>
 
   <defs>
     <style>
-      .tk-wordmark { font-family: "Helvetica Neue", "Arial Black", "Liberation Sans", Arial, sans-serif; font-weight: 900; letter-spacing: 0.005em; }
-      .tk-subline  { font-family: "Helvetica Neue", "Arial", "Liberation Sans", sans-serif; font-weight: 700; letter-spacing: 0.24em; }
+      .tk-wordmark { font-family: "Helvetica Neue", "Arial Black", "Liberation Sans", Arial, sans-serif; font-weight: 900; letter-spacing: 0.01em; }
+      .tk-subline  { font-family: "Helvetica Neue", "Arial", "Liberation Sans", sans-serif; font-weight: 500; letter-spacing: 0.04em; }
     </style>
   </defs>
 
-  <!-- Four red diamonds (tip-to-tip, hairline-overlapping).
-       Each diamond: 64 wide × 60 tall; centres stepped by 58px so points just touch. -->
-  <g fill="#C8102E">
-    <polygon points="20,60 52,30 84,60 52,90"/>
-    <polygon points="78,60 110,30 142,60 110,90"/>
-    <polygon points="136,60 168,30 200,60 168,90"/>
-    <polygon points="194,60 226,30 258,60 226,90"/>
+  <!-- Seven blue diamonds, 2–3–2 hex-pack cluster, tip-to-tip -->
+  <g fill="#007BFF" transform="translate(20 20)">
+    <!-- Row 1: 2 diamonds -->
+    <polygon points="60,0 90,30 60,60 30,30"/>
+    <polygon points="120,0 150,30 120,60 90,30"/>
+    <!-- Row 2: 3 diamonds -->
+    <polygon points="30,30 60,60 30,90 0,60"/>
+    <polygon points="90,30 120,60 90,90 60,60"/>
+    <polygon points="150,30 180,60 150,90 120,60"/>
+    <!-- Row 3: 2 diamonds -->
+    <polygon points="60,60 90,90 60,120 30,90"/>
+    <polygon points="120,60 150,90 120,120 90,90"/>
   </g>
 
   <!-- Wordmark: TAKUMI -->
-  <text x="282" y="78" class="tk-wordmark" font-size="64" fill="#000000">TAKUMI</text>
+  <text x="228" y="96" class="tk-wordmark" font-size="82" fill="#000000">TAKUMI</text>
 
   <!-- Subline: STAMPING CANADA INC -->
-  <text x="284" y="102" class="tk-subline" font-size="14" fill="#000000">STAMPING CANADA INC</text>
+  <text x="230" y="134" class="tk-subline" font-size="29" fill="#000000">STAMPING CANADA INC</text>
 </svg>

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 80" role="img" aria-labelledby="markTitle markDesc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 120" role="img" aria-labelledby="markTitle markDesc">
   <title id="markTitle">Takumi mark</title>
-  <desc id="markDesc">Takumi brand mark: four red diamonds in a horizontal row.</desc>
-  <g fill="#C8102E">
-    <polygon points="8,40 40,8 72,40 40,72"/>
-    <polygon points="66,40 98,8 130,40 98,72"/>
-    <polygon points="124,40 156,8 188,40 156,72"/>
-    <polygon points="182,40 214,8 246,40 214,72"/>
+  <desc id="markDesc">Takumi brand mark: a cluster of seven bright-blue diamonds.</desc>
+  <g fill="#007BFF">
+    <polygon points="60,0 90,30 60,60 30,30"/>
+    <polygon points="120,0 150,30 120,60 90,30"/>
+    <polygon points="30,30 60,60 30,90 0,60"/>
+    <polygon points="90,30 120,60 90,90 60,60"/>
+    <polygon points="150,30 180,60 150,90 120,60"/>
+    <polygon points="60,60 90,90 60,120 30,90"/>
+    <polygon points="120,60 150,90 120,120 90,90"/>
   </g>
 </svg>

@@ -43,18 +43,38 @@ Implemented:
 
 ## Logo
 
-`/assets/img/logo.svg` — a clean vector reconstruction of the Takumi Stamping Canada wordmark with the artisan kanji (匠) seal, using the brand red `#C8102E`. The SVG is self-contained, includes a `<title>` and `<desc>` for assistive tech, and scales cleanly at any size.
+Two SVG assets ship with the site, traced from the client's original logo:
 
-> **Note:** The live logo JPG at `takumistampingcanada.ca/wp-content/uploads/2020/02/logo-1.jpg` could not be fetched from this build environment (network-restricted). The SVG in this repository is a typographic reconstruction that matches the brand concept (wordmark + red seal mark with kanji). If you need a pixel-exact trace of the existing bitmap, swap `assets/img/logo.svg` with a re-traced version — every HTML page references the file by that path, so a drop-in replacement updates the whole site.
+- **`/assets/img/logo.svg`** — full lockup: a seven-diamond brand-blue cluster (`#007BFF`) beside the `TAKUMI` wordmark with `STAMPING CANADA INC` set underneath. Used in the site header and footer.
+- **`/assets/img/logo-mark.svg`** — mark-only (the seven-diamond cluster) for square / favicon / tight-space contexts.
+
+Both are:
+
+- Pure vector SVG — the diamonds are `<polygon>` primitives, so they render pin-sharp at every size and every DPI without rasterisation artefacts.
+- Self-contained — each includes a `<title>` and `<desc>` for assistive tech, and an inline `<style>` block for the wordmark typography (safe system-font stack, no external font loading).
+- Coloured with the brand blue `#007BFF` for the diamonds and solid black `#000000` for the wordmark — matching the hex palette from the client's cleaned-up reference artwork.
+
+> **Source:** vectorised from the reference raster provided by the client. If the original vector artwork (AI / EPS / PDF) is available, drop a replacement at `/assets/img/logo.svg` and the whole site picks it up automatically — every page references the file by that single path.
+
+## Content sources
+
+- **Brand facts** — incorporated from public profiles of Takumi Stamping Canada Inc.: subsidiary of **Takagi Manufacturing Company, Ltd.** of Okazaki, Japan; plant opened January 2008 in St. Thomas, Ontario; ~300 team members; supplies Toyota Motor Manufacturing Canada; uses **DMAIC** and **Six Sigma** for quality discipline.
+- **Site structure** — the five-department model (Stamping / Welding / Tooling / Quality / Maintenance + Logistics) and the five-pillar values (Safety / Quality / Customer service / Sustainability / Innovation) are modelled on the similar-company reference site futabanorthamerica.com, adapted to Takumi's Canadian context.
+- Because live site scraping is blocked from the build environment, verify any sensitive specifics (press tonnages, exact job titles, phone number, email aliases, plant photos) against the client's current materials before launch.
 
 ## Colour palette
 
-- Primary red: `#C8102E` (`--color-primary`)
-- Primary red (hover / text on white, AA-compliant): `#9E0C24` (`--color-primary-dark`)
-- Ink / headlines: `#1a1a1a`
-- Body text: `#212121`
-- Secondary text: `#4a4a4a`
-- Surface: `#ffffff` / alt `#f5f5f5` / dark `#0f0f0f`
+Derived from the cleaned-up logo the client supplied — brand blue + pure black on white, with supporting neutrals.
+
+- **Primary blue** (logo diamonds, hero glow, CTA band, large accents): `#007BFF` · `--color-primary`
+- **Primary blue (dark)** (links, button fills, hovers, eyebrows — AA-contrast on white): `#0056B3` · `--color-primary-dark`
+- **Wordmark / logo text:** `#000000`
+- **Page headings / ink:** `#1a1a1a` (17:1 on white)
+- **Body text:** `#212121` (16:1 on white)
+- **Secondary text:** `#4a4a4a` (8.9:1 on white)
+- **Surfaces:** `#ffffff` (default) · `#f5f5f5` (alt) · `#0f0f0f` (dark sections)
+- **Focus ring:** `#0b5cff` (distinct from brand blue, 5.3:1 on white)
+- **Hero / page-header deep tones:** `#0a1528` / `#0a1b33` (navy-tinted near-black that complements the brand blue glow)
 
 ## Deploying to Cloudflare Pages
 
@@ -122,10 +142,11 @@ The site is structured to make this straightforward:
 └── README.md
 ```
 
-## Things to replace before launch
+## Things to verify / replace before launch
 
-- Real phone number, email addresses, and plant address (currently placeholders).
-- Real hero / production photography in the `.split__image` blocks.
-- Finalized privacy policy text.
-- Replace the reconstructed logo SVG with a pixel-exact vector if required.
-- Hook the contact form to a real backend (Cloudflare Workers, Formspree, or WordPress Contact Form 7 after migration).
+- **Real phone, email, and address.** The current values (`(519) 633-6070`, `info@tsi-cn.ca`, `100 Dennis Rd, St. Thomas, ON N5P 0B6`) were drawn from public directory listings — confirm with the client.
+- **Production photography.** Swap the stylised SVG illustrations in each `.split__image` block with real press-line, weld-cell, and CMM photos. Keep `alt=""` on purely decorative shots or add a descriptive `alt` on shots that carry information.
+- **Privacy policy.** `/privacy.html` is a placeholder — replace with the client's final PIPEDA-aligned policy.
+- **Vector logo.** If the client has the original Illustrator/SVG artwork, drop it in at `/assets/img/logo.svg` (the whole site picks it up).
+- **Contact form backend.** Currently the form validates client-side and shows a friendly confirmation message; wire it up to a real backend (Cloudflare Workers email routing, Formspree, or WordPress Contact Form 7 after migration).
+- **Open Graph image.** Replace the logo-as-OG-image with a real 1200×630 social card once production photography is available.

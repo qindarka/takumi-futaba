@@ -144,7 +144,7 @@ The site is structured to make this straightforward:
 
 ## Things to verify / replace before launch
 
-- **Real phone, email, and address.** The current values (`(519) 633-6070`, `info@tsi-cn.ca`, `100 Dennis Rd, St. Thomas, ON N5P 0B6`) were drawn from public directory listings — confirm with the client.
+- **Real phone, email, and address.** The current values (`(519) 633-6070`, `HR@tsi-cn.ca`, `100 Dennis Rd, St. Thomas, ON N5P 0B6`) were drawn from public directory listings — confirm with the client.
 - **Production photography.** Swap the stylised SVG illustrations in each `.split__image` block with real press-line, weld-cell, and CMM photos. Keep `alt=""` on purely decorative shots or add a descriptive `alt` on shots that carry information.
 - **Privacy policy.** `/privacy.html` is a placeholder — replace with the client's final PIPEDA-aligned policy.
 - **Vector logo.** If the client has the original Illustrator/SVG artwork, drop it in at `/assets/img/logo.svg` (the whole site picks it up).

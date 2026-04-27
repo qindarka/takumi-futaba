@@ -78,18 +78,27 @@ Derived from the cleaned-up logo the client supplied — brand blue + pure black
 
 ## Deploying to Cloudflare Pages
 
-This repo is already Cloudflare Pages-ready.
+This repo is already Cloudflare Pages-ready. **Use Cloudflare Pages, not Cloudflare Workers** — Pages auto-deploys from GitHub on every push, Workers do not.
 
-1. Push to GitHub.
-2. In the Cloudflare dashboard: **Workers & Pages → Create → Pages → Connect to Git**.
-3. Select this repository and the branch (`main` once merged, or the feature branch for a preview).
-4. **Build settings:**
-   - Framework preset: *None*
-   - Build command: *(leave blank)*
-   - Output directory: `/` (the repository root)
-5. Deploy.
+1. Cloudflare dashboard → **Workers & Pages → Create → Pages tab → Connect to Git**.
+2. Select this repository: `qindarka/takumi-futaba`.
+3. **Build settings:**
+   | Field | Value |
+   |---|---|
+   | Production branch | `main` |
+   | Framework preset | *None* |
+   | Build command | *(leave empty)* |
+   | Build output directory | `/` |
+   | Root directory | *(leave empty)* |
+4. Click **Save and Deploy**. First build takes ~30 seconds.
+5. Cloudflare gives you a URL like `https://<project-name>.pages.dev`. That is the live site.
+6. **Custom domain:** in the project, **Custom domains → Set up a custom domain → `takumistampingcanada.ca`**. Cloudflare walks you through DNS.
 
 Security headers, caching, and the `404.html` fallback are handled automatically by Cloudflare via the included `_headers` and `_redirects` files and the root `404.html`.
+
+### If you previously deployed to a `*.workers.dev` URL
+
+Workers do **not** auto-deploy from GitHub. If a stale Worker still serves an old version of the site at `<name>.<account>.workers.dev`, delete it (or unbind the route) from the Cloudflare dashboard so visitors land on the new Pages deployment instead.
 
 ### Local preview
 

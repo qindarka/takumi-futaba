@@ -6,9 +6,16 @@ and the two cleanest ways to make sure code in `main` always reaches the live UR
 ## Current state (as of last commit)
 
 - **Repository:** `qindarka/takumi-futaba` on GitHub
-- **Default branch (production):** `main`
+- **Production branch (the one Cloudflare deploys):** `claude/redesign-professional-website-5q9tP`
 - **Live URL:** <https://takumi-futaba.keystonetech.workers.dev/>
 - **Hosting product:** Cloudflare **Workers** (account subdomain: `keystonetech`)
+- **Auto-deploy:** Cloudflare's GitHub integration auto-builds + deploys every push to the production branch above. The `cloudflare/workers-autoconfig` branch you see in the repo is a side-effect of that integration.
+
+## Branch strategy — read before pushing
+
+- **Push only to `claude/redesign-professional-website-5q9tP`.** That branch is the one Cloudflare watches; pushes to it auto-deploy to the live URL.
+- **Do NOT push to `main`.** `main` is not the production branch in Cloudflare. Pushing to it generates failed/orange preview builds in the Cloudflare build history — harmless, but noisy.
+- If `main` ever needs to be updated (e.g., for the WordPress migration), update it explicitly and intentionally, not as a habit.
 
 > Important: the live URL is a Cloudflare **Worker**, not a Cloudflare **Pages**
 > site. Those two Cloudflare products behave very differently — see below.

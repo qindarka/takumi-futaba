@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Takumi Stamping Canada">
+  <!-- Background: white. Removing this line gives a transparent square. -->
+  <rect width="200" height="200" fill="#ffffff"/>
+
+  <!-- Seven blue diamonds, 2-3-2 hex-pack cluster. Centered in 200x200. -->
+  <g fill="#007BFF" transform="translate(10 40)">
+    <!-- Row 1: 2 diamonds -->
+    <polygon points="60,0 90,30 60,60 30,30"/>
+    <polygon points="120,0 150,30 120,60 90,30"/>
+    <!-- Row 2: 3 diamonds -->
+    <polygon points="30,30 60,60 30,90 0,60"/>
+    <polygon points="90,30 120,60 90,90 60,60"/>
+    <polygon points="150,30 180,60 150,90 120,60"/>
+    <!-- Row 3: 2 diamonds -->
+    <polygon points="60,60 90,90 60,120 30,90"/>
+    <polygon points="120,60 150,90 120,120 90,90"/>
+  </g>
+</svg>

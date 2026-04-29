@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" role="img" aria-labelledby="logoTitle logoDesc" preserveAspectRatio="xMinYMid meet">
+  <title id="logoTitle">Takumi Stamping Canada Inc</title>
+  <desc id="logoDesc">Takumi Stamping Canada Inc logo: a cluster of seven bright-blue diamonds to the left of the TAKUMI wordmark, with STAMPING CANADA INC set beneath.</desc>
+
+  <defs>
+    <style>
+      .tk-wordmark { font-family: "Helvetica Neue", "Arial Black", "Liberation Sans", Arial, sans-serif; font-weight: 900; letter-spacing: 0.01em; }
+      .tk-subline  { font-family: "Helvetica Neue", "Arial", "Liberation Sans", sans-serif; font-weight: 500; letter-spacing: 0.04em; }
+    </style>
+  </defs>
+
+  <!-- Seven blue diamonds, 2–3–2 hex-pack cluster, tip-to-tip -->
+  <g fill="#007BFF" transform="translate(20 20)">
+    <!-- Row 1: 2 diamonds -->
+    <polygon points="60,0 90,30 60,60 30,30"/>
+    <polygon points="120,0 150,30 120,60 90,30"/>
+    <!-- Row 2: 3 diamonds -->
+    <polygon points="30,30 60,60 30,90 0,60"/>
+    <polygon points="90,30 120,60 90,90 60,60"/>
+    <polygon points="150,30 180,60 150,90 120,60"/>
+    <!-- Row 3: 2 diamonds -->
+    <polygon points="60,60 90,90 60,120 30,90"/>
+    <polygon points="120,60 150,90 120,120 90,90"/>
+  </g>
+
+  <!-- Wordmark: TAKUMI -->
+  <text x="228" y="96" class="tk-wordmark" font-size="82" fill="#000000">TAKUMI</text>
+
+  <!-- Subline: STAMPING CANADA INC -->
+  <text x="230" y="134" class="tk-subline" font-size="29" fill="#000000">STAMPING CANADA INC</text>
+</svg>

@@ -1,0 +1,223 @@
+<?php
+/**
+ * Homepage — assigned automatically when WP Settings → Reading is set
+ * to "A static page" with a Page named (slug) "home" or "front-page",
+ * OR when no posts page is configured.
+ */
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+$GLOBALS['takumi_page_slug']  = 'home';
+$GLOBALS['takumi_page_title'] = 'Takumi Stamping Canada — Precision Metal Stamping & Assembly';
+$GLOBALS['takumi_page_desc']  = 'Takumi Stamping Canada delivers precision metal stamping, welded assemblies, and tooling for the automotive and industrial sectors. IATF 16949 quality. St. Thomas, Ontario.';
+
+get_header();
+?>
+
+<main id="main">
+	<!-- HERO -->
+	<section class="hero" aria-labelledby="hero-heading">
+		<div class="container hero__inner">
+			<span class="eyebrow">Precision metal stamping &amp; welded assemblies</span>
+			<h1 id="hero-heading">Japanese craftsmanship. Canadian production. Parts the world moves on.</h1>
+			<p>Takumi Stamping Canada produces high-quality stamped and welded automotive components from our St.&nbsp;Thomas, Ontario plant &mdash; engineered with the discipline of our parent company, Takagi Manufacturing of Okazaki, Japan.</p>
+			<div class="hero__cta">
+				<a class="btn btn--inverse" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Request a quote</a>
+				<a class="btn btn--ghost" href="<?php echo esc_url( home_url( '/capabilities/' ) ); ?>">Explore capabilities</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- STATS -->
+	<section class="section section--tight" aria-label="Company at a glance">
+		<div class="container">
+			<ul class="stats" role="list">
+				<li class="stat"><div class="stat__num">2008</div><div class="stat__label">Producing in Canada since January 2008</div></li>
+				<li class="stat"><div class="stat__num">300+</div><div class="stat__label">Team members at our St.&nbsp;Thomas plant</div></li>
+				<li class="stat"><div class="stat__num">Six&nbsp;Sigma</div><div class="stat__label">DMAIC discipline across every program</div></li>
+				<li class="stat"><div class="stat__num">24/7</div><div class="stat__label">Production availability for OEM partners</div></li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- CAPABILITIES OVERVIEW -->
+	<section class="section section--alt" aria-labelledby="cap-heading">
+		<div class="container">
+			<span class="eyebrow">What we do</span>
+			<h2 id="cap-heading">A single partner from tool to shipped assembly.</h2>
+			<p class="lead">We combine high-speed stamping, precision welding, and integrated quality systems under one roof &mdash; shortening lead times and eliminating handoffs.</p>
+
+			<div class="grid grid--3" style="margin-top: var(--space-6);">
+				<article class="card">
+					<div class="card__icon" aria-hidden="true">
+						<svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zM3 10h18v4H3zM3 17h18v4H3z"/></svg>
+					</div>
+					<h3>Progressive &amp; transfer stamping</h3>
+					<p>High-volume production on presses from 110 to 1,200 tons, with in-die sensors and automated part handling.</p>
+					<a href="<?php echo esc_url( home_url( '/capabilities/#stamping' ) ); ?>">Learn more<span class="visually-hidden"> about stamping</span> &rarr;</a>
+				</article>
+				<article class="card">
+					<div class="card__icon" aria-hidden="true">
+						<svg viewBox="0 0 24 24"><path d="M12 2l2.5 6H21l-5 4 2 7-6-4-6 4 2-7-5-4h6.5z"/></svg>
+					</div>
+					<h3>Welded assemblies</h3>
+					<p>Robotic MIG, spot, and projection welding with vision-verified fixtures for safety-critical assemblies.</p>
+					<a href="<?php echo esc_url( home_url( '/capabilities/#welding' ) ); ?>">Learn more<span class="visually-hidden"> about welding</span> &rarr;</a>
+				</article>
+				<article class="card">
+					<div class="card__icon" aria-hidden="true">
+						<svg viewBox="0 0 24 24"><path d="M4 4h16v4H4zM4 11h10v9H4zM16 11h4v9h-4z"/></svg>
+					</div>
+					<h3>Tooling &amp; engineering</h3>
+					<p>In-house die design, build, and tryout &mdash; plus simulation and APQP support from concept through PPAP.</p>
+					<a href="<?php echo esc_url( home_url( '/capabilities/#tooling' ) ); ?>">Learn more<span class="visually-hidden"> about tooling</span> &rarr;</a>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- ABOUT / SPLIT -->
+	<section class="section" aria-labelledby="about-heading">
+		<div class="container split">
+			<div>
+				<span class="eyebrow">Our story</span>
+				<h2 id="about-heading">Built on the Takumi principle: the hand of the master.</h2>
+				<p>&ldquo;Takumi&rdquo; (匠) describes the artisan who has mastered every detail of their trade. As the Canadian subsidiary of <strong>Takagi Manufacturing Company, Ltd.</strong> of Okazaki, Japan, we carry that principle onto the production floor &mdash; disciplined processes, continuous improvement (kaizen), and a team empowered to stop the line when quality is at risk.</p>
+				<ul class="check-list">
+					<li>DMAIC &amp; Six&nbsp;Sigma principles applied to every program</li>
+					<li>Integrated APQP, PPAP, and FMEA from part concept to launch</li>
+					<li>Dedicated program managers for every OEM and Tier&nbsp;1 customer</li>
+				</ul>
+				<a class="btn btn--secondary" href="<?php echo esc_url( home_url( '/about/' ) ); ?>">Read our story</a>
+			</div>
+			<div class="split__image" aria-hidden="true">
+				<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+					<defs>
+						<linearGradient id="pressGlow" x1="0" x2="0" y1="0" y2="1">
+							<stop offset="0" stop-color="#007BFF" stop-opacity="0.55"/>
+							<stop offset="1" stop-color="#007BFF" stop-opacity="0"/>
+						</linearGradient>
+					</defs>
+					<rect x="0" y="0" width="200" height="150" fill="url(#pressGlow)"/>
+					<g stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round">
+						<rect x="34" y="20" width="132" height="110" rx="4"/>
+						<path d="M44 40 L156 40"/>
+						<path d="M60 40 L60 130 M140 40 L140 130"/>
+						<rect x="78" y="58" width="44" height="16" rx="2" fill="#ffffff" stroke="none"/>
+						<rect x="72" y="108" width="56" height="10" rx="2" fill="#ffffff" stroke="none"/>
+						<rect x="88" y="96" width="24" height="6" fill="#007BFF" stroke="none"/>
+						<circle cx="172" cy="28" r="12" fill="#ffffff" stroke="none"/>
+						<path d="M166 28 l5 5 9-9" stroke="#007BFF" stroke-width="2.5" fill="none"/>
+					</g>
+				</svg>
+			</div>
+		</div>
+	</section>
+
+	<!-- INDUSTRIES -->
+	<section class="section section--dark" aria-labelledby="ind-heading">
+		<div class="container">
+			<span class="eyebrow">Industries we serve</span>
+			<h2 id="ind-heading">Parts that move the world &mdash; safely and reliably.</h2>
+			<div class="grid grid--4" style="margin-top: var(--space-6);">
+				<article class="card card--dark">
+					<h3>Automotive OEM</h3>
+					<p>Small and medium stamped and welded components for Toyota Motor Manufacturing Canada and other global OEM and Tier&nbsp;1 partners.</p>
+				</article>
+				<article class="card card--dark">
+					<h3>EV &amp; battery</h3>
+					<p>Precision enclosures, brackets, and busbar components for electrified platforms and battery-pack programs.</p>
+				</article>
+				<article class="card card--dark">
+					<h3>Heavy equipment</h3>
+					<p>Structural stampings and welded subassemblies for agricultural, construction, and commercial-transport applications.</p>
+				</article>
+				<article class="card card--dark">
+					<h3>Industrial OEM</h3>
+					<p>Contract manufacturing for HVAC, appliance, and general industrial customers that expect automotive-grade discipline.</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- VALUES -->
+	<section class="section" aria-labelledby="values-heading">
+		<div class="container">
+			<span class="eyebrow">What we stand for</span>
+			<h2 id="values-heading">Five commitments that shape every shift.</h2>
+			<p class="lead" style="max-width: 70ch;">The five pillars we hold ourselves to &mdash; shared across every Takagi Group plant &mdash; define how we treat our people, our customers, and the communities we operate in.</p>
+			<div class="grid grid--3" style="margin-top: var(--space-6);">
+				<article class="card">
+					<div class="card__icon" aria-hidden="true">
+						<svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/></svg>
+					</div>
+					<h3>Safety</h3>
+					<p>A genuinely safe workplace is our first daily metric. Operators are empowered to stop the line whenever safety is at risk.</p>
+				</article>
+				<article class="card">
+					<div class="card__icon" aria-hidden="true">
+						<svg viewBox="0 0 24 24"><path d="M12 1l3 7h7l-5.6 4.1L18 20l-6-4.4L6 20l1.6-7.9L2 8h7z"/></svg>
+					</div>
+					<h3>Quality</h3>
+					<p>Six&nbsp;Sigma and DMAIC discipline deliver zero-defect commitments on every part we ship.</p>
+				</article>
+				<article class="card">
+					<div class="card__icon" aria-hidden="true">
+						<svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm1 5v4l3 2-.8 1.4L11 13V8h2z"/></svg>
+					</div>
+					<h3>Customer service</h3>
+					<p>Dedicated program managers behave like an extension of your plant floor &mdash; responsive, transparent, and accountable.</p>
+				</article>
+				<article class="card">
+					<div class="card__icon" aria-hidden="true">
+						<svg viewBox="0 0 24 24"><path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2zm7 12l.9 2.7L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-1.3L19 14zM5 14l.9 2.7L8 18l-2.1.9L5 21l-.9-2.1L2 18l2.1-1.3L5 14z"/></svg>
+					</div>
+					<h3>Sustainability</h3>
+					<p>Environmentally responsible manufacturing &mdash; measured reductions in energy, scrap, water, and emissions.</p>
+				</article>
+				<article class="card">
+					<div class="card__icon" aria-hidden="true">
+						<svg viewBox="0 0 24 24"><path d="M9 3v6H4l8 12 8-12h-5V3z"/></svg>
+					</div>
+					<h3>Innovation</h3>
+					<p>Kaizen in practice: small, relentless process improvements that compound into measurable performance gains.</p>
+				</article>
+				<article class="card">
+					<div class="card__icon" aria-hidden="true">
+						<svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 10-5-5 5 5 0 005 5zm0 2c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6z"/></svg>
+					</div>
+					<h3>Community</h3>
+					<p>Good corporate citizens in St.&nbsp;Thomas and Elgin County &mdash; local hiring, local suppliers, local contribution.</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- QUALITY LOGOS -->
+	<section class="section section--alt section--tight" aria-labelledby="qual-heading">
+		<div class="container" style="text-align:center;">
+			<span class="eyebrow">Certifications &amp; standards</span>
+			<h2 id="qual-heading" class="visually-hidden">Certifications and standards</h2>
+			<p class="lead" style="margin: 0 auto var(--space-6); max-width: 60ch;">Systems and audits customers trust on their most critical programs.</p>
+			<div class="logo-strip" role="list" aria-label="Certifications">
+				<span role="listitem">IATF&nbsp;16949</span>
+				<span role="listitem">ISO&nbsp;9001</span>
+				<span role="listitem">ISO&nbsp;14001</span>
+				<span role="listitem">Six&nbsp;Sigma / DMAIC</span>
+				<span role="listitem">AODA / WCAG&nbsp;2.0&nbsp;AA</span>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA BAND -->
+	<section class="cta-band" aria-labelledby="cta-heading">
+		<div class="container">
+			<h2 id="cta-heading">Ready to move your next program forward?</h2>
+			<p>Share your drawings, volumes, and timing. Our engineering team will respond with a manufacturability review within two business days.</p>
+			<p style="margin-top: var(--space-5);">
+				<a class="btn btn--inverse" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Start a project</a>
+			</p>
+		</div>
+	</section>
+</main>
+
+<?php get_footer(); ?>

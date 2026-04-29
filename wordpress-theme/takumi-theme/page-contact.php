@@ -43,4 +43,7 @@ get_header();
         endwhile;
     endif;
     ?>
+</main>
+
+<?php get_footer(); ?>
 

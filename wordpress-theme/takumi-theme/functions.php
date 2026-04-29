@@ -2,10 +2,16 @@
 /**
  * Takumi Stamping Canada — theme bootstrap
  *
- * Mirrors the static-site behaviour 1:1: same markup, same CSS, same JS.
- * Content is baked into the page templates ("static-feel" mode), so the
- * client only needs to create blank Pages in admin and assign the
- * matching template. No menus or block content to configure.
+ * Hybrid editing model:
+ *   - Hero, breadcrumb, footer and CTA bands are templated (locked) for
+ *     brand consistency.
+ *   - Body content of every page lives in the WP page editor (Gutenberg),
+ *     so the client can edit, reorder, duplicate or delete sections.
+ *
+ * On theme activation, any empty Page (slugged about / capabilities /
+ * etc.) is auto-populated from default-content/{slug}.php so the new
+ * editable site looks identical to the previous static-feel build on
+ * day one. Pages that already have editor content are NEVER overwritten.
  */
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
@@ -79,3 +85,65 @@ function takumi_trim_head() {
 	remove_action( 'wp_head', 'rsd_link' );
 }
 add_action( 'init', 'takumi_trim_head' );
+
+/* -------------------------------------------------------------------------
+ * One-time content population.
+ *
+ * Runs once on theme activation. For each known page slug, if the
+ * matching Page exists and its post_content is empty (or whitespace),
+ * load default-content/{slug}.php and save the returned Gutenberg
+ * block string into the page. Skips any page that already has content
+ * — the client's edits are never touched.
+ *
+ * To re-run for a page, blank its content in the editor and re-save,
+ * or delete the option:
+ *   delete_option( 'takumi_pages_seeded_v1' );
+ * and re-activate the theme.
+ * ---------------------------------------------------------------------- */
+function takumi_seed_default_pages() {
+	if ( get_option( 'takumi_pages_seeded_v1' ) === '1' ) {
+		return;
+	}
+
+	$slugs = array(
+		'about',
+		'capabilities',
+		'quality',
+		'industries',
+		'careers',
+		'contact',
+		'accessibility',
+		'privacy',
+	);
+
+	$dir = get_template_directory() . '/default-content/';
+
+	foreach ( $slugs as $slug ) {
+		$page = get_page_by_path( $slug );
+		if ( ! $page ) {
+			continue;
+		}
+		// Only fill if the editor is empty.
+		if ( trim( wp_strip_all_tags( $page->post_content ) ) !== '' ) {
+			continue;
+		}
+
+		$file = $dir . $slug . '.php';
+		if ( ! file_exists( $file ) ) {
+			continue;
+		}
+
+		$content = include $file;
+		if ( ! is_string( $content ) || $content === '' ) {
+			continue;
+		}
+
+		wp_update_post( array(
+			'ID'           => $page->ID,
+			'post_content' => $content,
+		) );
+	}
+
+	update_option( 'takumi_pages_seeded_v1', '1' );
+}
+add_action( 'after_switch_theme', 'takumi_seed_default_pages' );

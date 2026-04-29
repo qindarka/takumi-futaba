@@ -11,7 +11,7 @@ $GLOBALS['takumi_page_desc']  = 'Industries we serve — automotive, EV and batt
 get_header();
 ?>
   <main id="main">
-    <section class="page-header" aria-labelledby="page-heading">
+<section class="page-header" aria-labelledby="page-heading">
       <div class="container">
         <span class="eyebrow" style="color:#9ccbff;">Industries</span>
         <h1 id="page-heading">Parts that move industries forward.</h1>
@@ -28,50 +28,18 @@ get_header();
       </div>
     </nav>
 
-    <section class="section" aria-labelledby="industries-heading">
-      <div class="container">
-        <span class="eyebrow">Where our parts run</span>
-        <h2 id="industries-heading">Four sectors we serve.</h2>
-        <div class="grid grid--2" style="margin-top: var(--space-6);">
-          <article class="card">
-            <h3>Automotive OEM &amp; Tier&nbsp;1</h3>
-            <p>Small and medium body, structural, seat, and powertrain components. Long-standing supplier to <strong>Toyota Motor Manufacturing Canada</strong> and to Tier&nbsp;1 partners supporting the Ontario assembly corridor. Experience with high-strength and advanced high-strength steels on safety-critical parts.</p>
-            <ul class="check-list">
-              <li>Cross-members and reinforcements</li>
-              <li>Brackets and mounting hardware</li>
-              <li>Seat frames and structural welded assemblies</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Electric vehicle &amp; battery</h3>
-            <p>Precision parts for electrified platforms &mdash; tight-tolerance stampings and welded enclosures built to support thermal and structural requirements.</p>
-            <ul class="check-list">
-              <li>Battery tray structural components</li>
-              <li>Busbar and connection-plate stampings</li>
-              <li>Enclosure brackets and mounting features</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Heavy equipment &amp; transport</h3>
-            <p>Large-format stampings and welded subassemblies for agricultural, construction, and commercial transport programs.</p>
-            <ul class="check-list">
-              <li>Chassis brackets and reinforcements</li>
-              <li>Hood and fender skins</li>
-              <li>Operator-cab structural components</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Industrial OEM</h3>
-            <p>Contract manufacturing for appliance, HVAC, and general industrial customers who need IATF-grade discipline on non-automotive parts.</p>
-            <ul class="check-list">
-              <li>Enclosures and panels</li>
-              <li>Brackets and chassis parts</li>
-              <li>Sub-assembly build and packaging</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
+
+    <?php
+    /* Editable body content from the WP page editor.
+       On first activation, populated from default-content/industries.php. */
+    if ( have_posts() ) :
+        while ( have_posts() ) : the_post();
+            the_content();
+        endwhile;
+    endif;
+    ?>
+
+
 
     <section class="cta-band" aria-labelledby="cta-heading">
       <div class="container">
